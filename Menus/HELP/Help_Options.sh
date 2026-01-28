@@ -9,6 +9,7 @@ declare -A ScriptMap=(
     ["Terminal Commands"]="terminalfunc_help.sh"
     ["Mango Tags"]="mango_show_help.sh"
     ["Zathura Tags"]="zathura_help.sh"
+    ["Nvim Shortcuts"]="nvim_help.sh"
 )
 
 # Mostrar opciones de dmenu
