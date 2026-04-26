@@ -3,9 +3,9 @@
 # =============================================================================
 # Authors:      Román García Guill
 # Contact:      romangarciaguill@gmail.com
-# Created:      Wed 28. Jan 2026
+# Created:      Sun 29. Mar 2026
 #
-# Purpose:      shows the definition of a word 
+# Purpose:      Takes video with audio.
 # =============================================================================
 
-notify-send -u critical "Hora de dormir" "おやすみなさい"
+ffmpeg -f v4l2 -i /dev/video0 -f pulse -i default video.mp4

@@ -3,9 +3,12 @@
 # =============================================================================
 # Authors:      Román García Guill
 # Contact:      romangarciaguill@gmail.com
-# Created:      Wed 28. Jan 2026
+# Created:      Sat 21. Mar 2026
 #
-# Purpose:      shows the definition of a word 
+# Purpose:      Launches Cava
 # =============================================================================
 
-notify-send -u critical "Hora de dormir" "おやすみなさい"
+pkill -x lavat 2>/dev/null
+sleep 0.2
+
+kitty --title "l_lavat" -e lavat -g -G -c 0000FF -k FF0000 -C

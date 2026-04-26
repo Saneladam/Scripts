@@ -3,9 +3,9 @@
 # =============================================================================
 # Authors:      Román García Guill
 # Contact:      romangarciaguill@gmail.com
-# Created:      Wed 28. Jan 2026
+# Created:      Sun 29. Mar 2026
 #
-# Purpose:      shows the definition of a word 
+# Purpose:      Takes a recording of the whole screen.
 # =============================================================================
 
-notify-send -u critical "Hora de dormir" "おやすみなさい"
+wf-recorder -f screen.mp4

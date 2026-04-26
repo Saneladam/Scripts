@@ -3,9 +3,10 @@
 # =============================================================================
 # Authors:      Román García Guill
 # Contact:      romangarciaguill@gmail.com
-# Created:      Wed 28. Jan 2026
+# Created:      Fri 30. Jan 2026
 #
-# Purpose:      shows the definition of a word 
+# Purpose:      Give autostart perms to enable X 
 # =============================================================================
 
-notify-send -u critical "Hora de dormir" "おやすみなさい"
+sudo chown root:root /tmp/.X11-unix
+sudo chmod 1777 /tmp/.X11-unix

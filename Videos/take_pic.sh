@@ -3,9 +3,9 @@
 # =============================================================================
 # Authors:      Román García Guill
 # Contact:      romangarciaguill@gmail.com
-# Created:      Wed 28. Jan 2026
+# Created:      Sun 29. Mar 2026
 #
-# Purpose:      shows the definition of a word 
+# Purpose:      Take a picture with the camara.
 # =============================================================================
 
-notify-send -u critical "Hora de dormir" "おやすみなさい"
+ffmpeg -f v4l2 -i /dev/video0 -frames:v 1 foto.jpg

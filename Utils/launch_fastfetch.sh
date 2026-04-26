@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 # =============================================================================
 # Authors:      Roman Garcia Guill
@@ -9,8 +9,7 @@
 # =============================================================================
 
 
-exec kitty \
-  --class fastfetch \
-  --title fastfetch \
-  --detach \
-  fastfetch
+pkill -x fastfetch 2>/dev/null
+sleep 0.2
+
+kitty --title "l_fastfetch" --hold fastfetch

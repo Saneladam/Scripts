@@ -43,6 +43,7 @@ declare -A ScriptMap=(
     ["SUPER+v"]="Launch app: virt-manager"
     ["SUPER+m"]="Launch app: neomutt"
     ["SUPER+x"]="Launch app: sc-im"
+    ["SUPER+w"]="Launch app: impala"
     ["SUPER+ALT+r"]="Execute script: reload_config"
     ["SUPER+ALT+s"]="Execute script: ~/Scripts/snip.sh"
     ["SUPER+ALT+g"]="Execute script: ~/Scripts/Menus/Music_Options.sh"

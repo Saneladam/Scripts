@@ -14,11 +14,23 @@
 
 # weather_params="Garching?format=%l:+%c+(%f)+%t+%p"
 weather_params="Garching?format=((R+%S=>S+%s))~~~M+%M"
-data_path="/home/akash/Scripts/Weather/data_weather_2.txt"
+data_path="$HOME/Scripts/Weather/data_weather_2.txt"
 duration=76400
 conn_time=60
 max_time=60
+max_len=40
 
+setWeatherData() {
+    weather_data="$(<"$data_path")"
+}
+showWeatherData() {
+    echo "${weather_data:0:max_len}"
+}
+getWeatherData() {
+    # curl -s --connect-timeout $conn_time -m $max_time "https://wttr.in/$weather_params" > "$data_path" || quit 'service unreachable'
+    # curl -s --connect-timeout $conn_time -m $max_time "http://wttr.in/$weather_params" > "$data_path" || quit 'service unreachable'
+    curl -s --connect-timeout $conn_time -m $max_time "wttr.in/$weather_params" > "$data_path" || quit 'service unreachable'
+}
 getWeather() {
     if [[ -e "$data_path" ]]; then
         weather_date="$(stat -c '%Y' "$data_path")"
@@ -37,17 +49,6 @@ getWeather() {
     fi
 
     showWeatherData
-}
-getWeatherData() {
-    # curl -s --connect-timeout $conn_time -m $max_time "https://wttr.in/$weather_params" > "$data_path" || quit 'service unreachable'
-    # curl -s --connect-timeout $conn_time -m $max_time "http://wttr.in/$weather_params" > "$data_path" || quit 'service unreachable'
-    curl -s --connect-timeout $conn_time -m $max_time "wttr.in/$weather_params" > "$data_path" || quit 'service unreachable'
-}
-setWeatherData() {
-    weather_data="$(cat "$data_path")"
-}
-showWeatherData() {
-    echo "$weather_data"
 }
 quit() {
     if [[ "$1" = 0 ]]
